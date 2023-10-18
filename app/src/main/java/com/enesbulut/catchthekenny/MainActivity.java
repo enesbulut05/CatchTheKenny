@@ -134,9 +134,10 @@ public class MainActivity extends AppCompatActivity {
     }
 
 
+
     @Override
     public void onBackPressed() {
-       // super.onBackPressed();
+       // super.onBackPressed(); deneme
     }
 
     public void click(View view) {
