@@ -58,8 +58,8 @@ public class MainActivity extends AppCompatActivity {
                     int layoutHeight = getWindow().getDecorView().getHeight();
                     int kennyWidth = kenny.getWidth();
                     int kennyHeight = kenny.getHeight();
-                    int maxX = layoutWidth - kennyWidth;
-                    int maxY = layoutHeight - kennyHeight;
+                    int maxX = Math.max(layoutWidth - kennyWidth, 1); // minX değeri en az 1 olmalı
+                    int maxY = Math.max(layoutHeight - kennyHeight, 1); // minY değeri en az 1 olmalı
                     int newX = random.nextInt(maxX);
                     int newY = random.nextInt(maxY);
 
@@ -102,6 +102,7 @@ public class MainActivity extends AppCompatActivity {
                     alert.setPositiveButton("Yes", new DialogInterface.OnClickListener() {
                         @Override
                         public void onClick(DialogInterface dialog, int which) {
+
                             Intent intent = new Intent(MainActivity.this, MainActivity.class);
                             startActivity(intent);
                         }
@@ -137,7 +138,7 @@ public class MainActivity extends AppCompatActivity {
 
     @Override
     public void onBackPressed() {
-       // super.onBackPressed(); deneme
+       // super.onBackPressed();
     }
 
     public void click(View view) {
